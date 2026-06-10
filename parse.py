@@ -119,6 +119,7 @@ class Parser:
         elif self.checkToken(TokenType.GOTO):
             print("STATEMENT-GOTO")
             self.nextToken()
+            self.labelsGotoed.add(self.curToken.text)
             self.match(TokenType.IDENT)
 
         # "LET" ident "=" expression
@@ -165,6 +166,11 @@ class Parser:
             self.expression()
         else: 
             self.abort("expected comparison operator at: ", self.curToken.text)
+
+        # can have 0 or more comparison operator and expressions
+        while self.isComparisonOperator():
+            self.nextToken()
+            self.expression()
 
 
     # return true if the current token is a comparison operator

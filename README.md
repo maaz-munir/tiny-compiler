@@ -25,3 +25,6 @@ Or you can run it yourself via
 ## Basic Understanding
 
 The compiler in this repo uses a three-step approach to compile programs. Below is a diagram to understand the overrall flow of this compiler.
+
+<img width="2280" height="856" alt="image" src="https://github.com/user-attachments/assets/1d0c844a-27c3-4181-8cbb-d886784b407e" />
+
